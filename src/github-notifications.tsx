@@ -22,8 +22,13 @@ const GithubLogo = {
 type Notification = { id: string };
 
 export default function Command() {
+  // https://docs.github.com/en/rest/activity/notifications?apiVersion=2022-11-28
   const { data, isLoading } = useFetch<Notification[], Notification[]>("https://api.github.com/notifications", {
-    headers: { Authorization: `bearer ${githubToken}` },
+    headers: {
+      "Accept": "application/vnd.github+json",
+      "Authorization": `bearer ${githubToken}`,
+      "X-GitHub-Api-Version": "2022-11-28",
+    },
     initialData: [] as Notification[],
     keepPreviousData: true,
   });
