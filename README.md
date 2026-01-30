@@ -1,1 +1,25 @@
 # Github Notifications
+
+This is a [Raycast extension](https://developers.raycast.com/) for
+showing a count of unread [Github
+notifications](https://github.com/notifications) in your menu bar.
+
+## Install
+
+If you don't use [Raycast](https://www.raycast.com/), you can install it at
+that download link or `brew install raycast.`
+
+Then:
+
+```
+git clone https://github.com/matthewtodd/raycast-extension-github-notifications.git && cd raycast-extension-github-notifications
+which npm || brew install node
+npm install && npm run dev
+```
+
+Type "github notifications" in the Raycast window and follow your nose. You
+will need to create a "classic" style [personal access
+token](https://github.com/settings/tokens) with the "notifications" OAuth
+scope.
+
+At this point, the extension is installed and you can ctrl-c to kill the watcher process in the terminal.

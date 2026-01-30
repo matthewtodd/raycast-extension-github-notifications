@@ -3,11 +3,10 @@
   "name": "github-notifications",
   "title": "Github Notifications",
   "description": "",
-  "icon": "extension-icon.png",
+  "icon": "GitHub_Invertocat_Clearspace.png",
   "author": "matthewtodd",
   "platforms": [
-    "macOS",
-    "Windows"
+    "macOS"
   ],
   "categories": [
     "Developer Tools"
@@ -17,8 +16,19 @@
     {
       "name": "github-notifications",
       "title": "Github Notifications",
-      "description": "",
-      "mode": "menu-bar"
+      "description": "Shows an icon in the menu bar when you have unread Github notifications.",
+      "mode": "menu-bar",
+      "interval": "1m",
+      "preferences": [
+        {
+          "name": "githubToken",
+          "type": "password",
+          "required": true,
+          "title": "Github Token",
+          "description": "Your Github Personal Access Token",
+          "placeholder": "Github Personal Access Token (scope: notifications)"
+        }
+      ]
     }
   ],
   "dependencies": {
