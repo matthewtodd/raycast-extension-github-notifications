@@ -4,6 +4,11 @@ This is a [Raycast extension](https://developers.raycast.com/) for
 showing a count of unread [Github
 notifications](https://github.com/notifications) in your menu bar.
 
+It is nearly identical to the "Unread Notifications" command in the
+Raycast-provided [Github extension](https://www.raycast.com/raycast/github),
+which you may prefer. The primary difference is that this one refreshes far
+more frequently, every minute instead of every fifteen minutes.
+
 ![screenshot](/assets/screenshot.png)
 
 I want to respond quickly to review requests, but I don't keep my email or a
