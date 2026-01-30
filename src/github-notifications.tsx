@@ -34,13 +34,14 @@ export default function Command() {
   });
 
   // I want the item to disappear if I don't have any notifications.
-  // Unfortunately I can't just return null in that case because Raycast needs
-  // to look at the isLoading property when a request is in flight.
-  const icon = data.length > 0 ? GithubLogo : undefined;
-  const title = data.length > 0 ? `${data.length}` : undefined;
+  // We need to return the MenuBarExtra while we're loading for Raycast to keep
+  // the process alive.
+  if (!isLoading && data.length === 0) {
+    return null;
+  }
 
   return (
-    <MenuBarExtra icon={icon} title={title} isLoading={isLoading}>
+    <MenuBarExtra icon={GithubLogo} title={`${data.length}`} isLoading={isLoading}>
       <MenuBarExtra.Item title="Open on Github" onAction={() => open("https://github.com/notifications")} />
     </MenuBarExtra>
   );
