@@ -1,16 +1,17 @@
 import { getPreferenceValues, MenuBarExtra, open } from "@raycast/api";
 import { useFetch } from "@raycast/utils";
 
-// This extension is configured (by the preferences key in package.json) such
-// that Raycast will prompt for and securely store the Github personal access
-// token it needs to operate.
+// To fetch Github notifications, we need a "classic" personal access token
+// with the "notifications" scope.
+// You can set one up at https://github.com/settings/tokens
 //
-// To generate a suitable token, create a "classic" token with the
-// "notifications" scope at https://github.com/settings/tokens
+// Raycast will prompt us for this token and store it securely, driven by the
+// "preferences" key in package.json.
 const { githubToken } = getPreferenceValues();
 
-// We can add more fields to this type if we ever want the menu bar to display
-// anything more than a count. For now, I prefer the simple count.
+// Many more fields are returned from the API call, but we don't need them
+// until we decide to display more information. For now, I'm happy with showing
+// an unread count.
 type Notification = { id: string };
 
 export default function Command() {
