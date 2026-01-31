@@ -9,14 +9,6 @@ import { useFetch } from "@raycast/utils";
 // "notifications" scope at https://github.com/settings/tokens
 const { githubToken } = getPreferenceValues();
 
-// Taken from https://brand.github.com/foundations/logo
-const GithubLogo = {
-  source: {
-    light: "GitHub_Invertocat_Black.svg",
-    dark: "GitHub_Invertocat_White.svg",
-  },
-};
-
 // We can add more fields to this type if we ever want the menu bar to display
 // anything more than a count. For now, I prefer the simple count.
 type Notification = { id: string };
@@ -41,7 +33,7 @@ export default function Command() {
   }
 
   return (
-    <MenuBarExtra icon={GithubLogo} title={`${data.length}`} isLoading={isLoading}>
+    <MenuBarExtra icon="GitHub_Invertocat.svg" title={`${data.length}`} isLoading={isLoading}>
       <MenuBarExtra.Item title="Open on Github" onAction={() => open("https://github.com/notifications")} />
     </MenuBarExtra>
   );
