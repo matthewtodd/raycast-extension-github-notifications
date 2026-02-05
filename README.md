@@ -17,8 +17,8 @@ If you don't use [Raycast](https://www.raycast.com/), you can install it at
 that download link or `brew install raycast.`
 
 Then you'll need to create a Github "classic" style [personal access
-token](https://github.com/settings/tokens/new) with the "notifications" OAuth
-scope. (Keep this handy for the next step.)
+token](https://github.com/settings/tokens/new?description=Raycast+Notifications+Extension&scopes=notifications)
+with the "notifications" OAuth scope. (Keep this handy for the next step.)
 
 Then install this extension:
 
