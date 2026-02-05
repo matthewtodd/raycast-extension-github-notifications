@@ -31,3 +31,9 @@ npm install && npm run dev
 Type "github notifications" in the Raycast window and follow your nose!
 
 At this point, the extension is installed and you can ctrl-c to kill the watcher process in the terminal.
+
+## Contribute
+
+Despite all the files above, there's actually very little code here. It's all
+in [src/github-notifications.tsx](/src/github-notifications.tsx), with a little
+configuration in [package.json](/package.json). Have fun!
