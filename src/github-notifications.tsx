@@ -30,7 +30,9 @@ export default function Command() {
   // still need to return it (not null) while we're loading for Raycast to keep
   // the process alive.
   if (data.length === 0) {
-    return (isLoading) ? (<MenuBarExtra isLoading={isLoading} />) : null;
+    return (
+      <MenuBarExtra isLoading={isLoading} />
+    );
   }
 
   return (
