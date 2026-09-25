@@ -33,13 +33,12 @@ export default function Command() {
     keepPreviousData: true,
   });
 
-  // I want the item to disappear if I don't have any notifications, but we
-  // still need to return it (not null) while we're loading for Raycast to keep
-  // the process alive.
   if (data.length === 0) {
-    return (
-      <MenuBarExtra isLoading={isLoading} />
-    );
+    if (isLoading) {
+      return (<MenuBarExtra isLoading={isLoading} />);
+    } else {
+      return null;
+    }
   }
 
   return (
