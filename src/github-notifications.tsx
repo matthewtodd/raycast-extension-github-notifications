@@ -14,6 +14,13 @@ const { githubToken } = getPreferenceValues();
 // an unread count.
 type Notification = { id: string };
 
+const Icon = {
+  source: {
+    light: "GitHub_Invertocat.svg",
+    dark: "GitHub_Invertocat@dark.svg",
+  },
+};
+
 export default function Command() {
   // https://docs.github.com/en/rest/activity/notifications?apiVersion=2022-11-28
   const { data, isLoading } = useFetch<Notification[], Notification[]>("https://api.github.com/notifications", {
@@ -36,7 +43,7 @@ export default function Command() {
   }
 
   return (
-    <MenuBarExtra icon="GitHub_Invertocat.svg" title={`${data.length}`} isLoading={isLoading}>
+    <MenuBarExtra icon={Icon} title={`${data.length}`} isLoading={isLoading}>
       <MenuBarExtra.Item title="Open on Github" onAction={() => open("https://github.com/notifications")} />
     </MenuBarExtra>
   );
