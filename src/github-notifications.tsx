@@ -11,8 +11,13 @@ const { githubToken } = getPreferenceValues();
 
 // Many more fields are returned from the API call, but we don't need them
 // until we decide to display more information. For now, I'm happy with showing
-// an unread count.
-type Notification = { id: string };
+// an unread count and each title.
+// Should I want to fetch any of the urls associated with the notification,
+// I'll need to grant more scopes to my personal access token.
+type Notification = {
+  id: string;
+  subject: { title: string; };
+};
 
 const Icon = {
   source: {
@@ -43,7 +48,9 @@ export default function Command() {
 
   return (
     <MenuBarExtra icon={Icon} title={`${data.length}`} isLoading={isLoading}>
-      <MenuBarExtra.Item title="Open on Github" onAction={() => open("https://github.com/notifications")} />
+      {data.map((notification) => (
+        <MenuBarExtra.Item key={notification.id} title={notification.subject.title} onAction={() => open("https://github.com/notifications")} />
+      ))}
     </MenuBarExtra>
   );
 }
